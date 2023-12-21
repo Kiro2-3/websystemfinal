@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../../../Users/rocky/Downloads/java1/fullfile1"
+		},
+		{
+			"path": "../../../Users/rocky/Documents/testcss"
+		},
+		{
+			"path": "../../../Users/rocky/Downloads/Login Form - No JavaScript/Login Form - No JavaScript"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"src"
+		],
+		"java.project.outputPath": "bin",
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar"
+		],
+		"liveServer.settings.multiRootWorkspaceName": "Login Form - No JavaScript"
+	}
+}

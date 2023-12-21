@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+
+    /*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+Created on : Nov 30, 2023, 1:29:10 PM
+Author     : Aron James Betinol
+*/
+body{
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+@media screen and (width > 1023px){
+
+/* this CSS is for the HEADER */
+#container{
+background-color: black;
+width: 100%;
+height: 50px;
+}
+#cart{
+position: fixed;
+padding: 10px;
+color: #f0ff42;
+font-size: 30px;
+right: 1%;
+}
+#count{
+position: absolute;
+background-color: #f0ff42;
+width: 18px;
+height: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+border-radius: 100%;
+right: 20px;
+border: solid black;
+}
+
+/* this CSS is for the ADD TO CART or ORDERING */
+#order{
+display: flex;
+width: 100%;
+height: 617px;
+top: 50px;
+overflow: auto;
+}
+
+/* This part is for the list of the products */
+.prodPart{
+overflow: auto;
+}
+#listCarts{
+margin: 20px;
+width: 96%;
+height: 10px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 20px;
+gap: 20px;
+}
+.box{ /* JAVASCRIPT ITEM SHOWS*/
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+background-color: #B7FFC1;
+box-shadow: 0px 0px 5px black;
+max-width: 100%;
+max-height: 100%;
+}
+.img-box{
+max-width: 100%;
+max-height: 180px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.images{
+max-height: 90%;
+max-width: 90%;
+object-fit: cover;
+}
+.left{
+font-family: Verdana, Geneva, sans-serif;
+}
+.AddToCartBTN{
+width: 300px;
+border: none;
+border-radius: 0;
+font-size: 12px;
+padding: 10px;
+background-color: #2EFF8D;
+}
+.AddToCartBTN:hover{
+background-color: #00AD4F;
+color: white;
+}
+
+/* this part is when the user click the product display on the sidebar */
+.YourCart{
+border-bottom: solid #E3D800;
+color: #E3D800;
+padding: 10px;
+font-size: 25px;
+font-family: Gill Sans, sans-serif;
+font-weight: bold;
+}
+.cart-item{ /* JAVASCRIPT SHOWING ITEM SELECT*/
+margin-bottom: 5px;
+display: flex;
+flex-direction: row;
+grid-template-rows: repeat(1, 1fr);
+grid-gap: 10px;
+gap: 10px;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+background-color: #B7FFC1;
+box-shadow: 0px 0px 5px black;
+max-width: 100%;
+max-height: 200px;
+color: black;
+}
+.rowimg{
+max-width: 50%;
+max-height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* this part is the sidebar when the user saw his/her order and cost */
+.sidebar{ /* SIDEBAR BODY */
+width: 25%;
+padding: 10px;
+background-color: #404040;
+text-align: center;
+color: white;
+}
+#cartItem{
+font-size: 20px;
+height: 360px;
+overflow: auto;
+}
+.foot{
+line-height: 1px;
+margin: 20px 0px;
+padding: 10px 0px;
+display: flex;
+justify-content: space-between;
+border-top: solid;
+}
+#trash{ /* ONCLICK FOR DELETE*/
+color: red;
+}
+.checkout{ /* BUTTON FOR CHECK OUT ITEMS*/
+display: flex;
+justify-content: center;
+font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0;
+border: 0;
+background-color: #E3D800;
+width: 300px;
+}
+}
+
+
+</style>
+<title>CDMOS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="script.js" defer></script>
+</head>
+    <head>
+
+
+       
+    <body>
+        <div id="container">
+            <i class="fa-solid fa-cart-shopping" id="cart" onclick="toggleCart()"></i>
+            <div id="count">0</div>
+        </div>
+        
+        <!-- /* this HTML is for the ADD TO CART or ORDERING */ -->
+        <div id="order">
+            <div class="prodPart">
+                <div id="listCarts"></div>
+            </div>
+            <div class="sidebar">
+                <p class="YourCart">My Purchases</p>
+                <div id="cartItem">No Purchase Yet</div>
+                <div class="foot">
+                    <h3>Total: </h3>
+                    <h2 id="total">₱ 0.00</h2>
+                </div>
+                <button class="checkout">Check Out</button>
+            </div>
+        </div>
+        
+    </body>
+</html>
